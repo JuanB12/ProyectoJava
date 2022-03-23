@@ -1,16 +1,18 @@
 
 /**
  *
- * @author Lenovo
+ * @author BarriosJuan, LernaDaniel, TorresSebastian
  */
 public class Persona {
-
+    
+    //Atributos de la clase Persona
     private String Nombre;
     private String Apellido;
     private long Cedula;
     private long Telefono;
     private long Direccion;
-
+    
+    //Metodos de la clase Persona
     public String getNombre() {
         return Nombre;
     }
