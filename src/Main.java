@@ -3,13 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.*;
 
 /**
  *
  * @author Lenovo
  */
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
+        Cliente clientes = new Cliente();
+        Factura facturas = new Factura();
+        Inventario inventarios = new Inventario();
+        Persona personas = new Persona();
+        Producto productos = new Producto();
+        Proovedor proovedores = new Proovedor();
+        Recibo recibos = new Recibo();
+        Vendedor vendedores = new Vendedor();
     }
 }
