@@ -12,13 +12,17 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Cliente clientes = new Cliente();
-        Factura facturas = new Factura();
-        Inventario inventarios = new Inventario();
-        Persona personas = new Persona();
-        Producto productos = new Producto();
-        Proovedor proovedores = new Proovedor();
-        Recibo recibos = new Recibo();
-        Vendedor vendedores = new Vendedor();
+        Scanner leer = new Scanner (System.in);
+//        Cliente clientes = new Cliente();
+//        Factura facturas = new Factura();
+//        Inventario inventarios = new Inventario();
+//        Persona personas = new Persona();
+//        Producto productos = new Producto();
+//        Proovedor proovedores = new Proovedor();
+//        Recibo recibos = new Recibo();
+//        Vendedor vendedores = new Vendedor();
+        int a = 5, b = 6, suma = 0;
+        suma = a+b;
+        System.out.println(suma);
     }
 }
