@@ -24,5 +24,6 @@ public class Main {
         int a = 5, b = 6, suma = 0;
         suma = a+b;
         System.out.println(suma);
+        System.out.println("la suma es:" + suma);
     }
 }
