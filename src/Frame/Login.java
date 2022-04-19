@@ -1,5 +1,11 @@
 package Frame;
 
+import java.awt.BorderLayout;
+import AppPackage.AnimationClass;
+import java.awt.Desktop;
+import java.net.URI;
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -7,6 +13,21 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void OpenInternet() {
+        try {
+            Desktop.getDesktop().browse(URI.create("https://www.google.com"));
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(this, e);
+        }
+    }
+    
+    public void OpenMusic() {
+        try {
+            Desktop.getDesktop().browse(URI.create("https://www.youtube.com"));
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(this, e);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -17,18 +38,39 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jpIngreso = new javax.swing.JPanel();
+        jLabelMenu = new javax.swing.JLabel();
+        jLabelInternet = new javax.swing.JLabel();
+        jLabelCalculator = new javax.swing.JLabel();
+        jLabelMusic = new javax.swing.JLabel();
+        jLabelUserPerfil = new javax.swing.JLabel();
         jLUser = new javax.swing.JLabel();
-        jLPass = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLPass = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonEnter = new javax.swing.JButton();
+        jpAcciones = new javax.swing.JPanel();
+        jLabelProgramador1 = new javax.swing.JLabel();
+        jLabelCronograma = new javax.swing.JLabel();
+        jLabelMantenimiento = new javax.swing.JLabel();
+        jLabelNotas = new javax.swing.JLabel();
+        jLabelDrive = new javax.swing.JLabel();
+        jLabelSocios = new javax.swing.JLabel();
+        jLabelBarra = new javax.swing.JLabel();
+        jlabelProgramado = new javax.swing.JLabel();
+        jlabelMenu = new javax.swing.JLabel();
+        jlabelMantenimiento = new javax.swing.JLabel();
+        jlabelFoco = new javax.swing.JLabel();
+        jlabelDrive = new javax.swing.JLabel();
+        jlabelSocio = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jpE_S = new javax.swing.JPanel();
+        jLabelMinimizar = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -36,92 +78,371 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpIngreso.setBackground(new java.awt.Color(255, 255, 255));
-        jpIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jpIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jpIngreso.setForeground(new java.awt.Color(255, 255, 255));
         jpIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLUser.setBackground(new java.awt.Color(238, 112, 82));
+        jLabelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista.png"))); // NOI18N
+        jLabelMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelMenuMouseClicked(evt);
+            }
+        });
+        jpIngreso.add(jLabelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
+
+        jLabelInternet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Internet.png"))); // NOI18N
+        jLabelInternet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelInternetMouseClicked(evt);
+            }
+        });
+        jpIngreso.add(jLabelInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 54, -1, 40));
+
+        jLabelCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/calculadora.png"))); // NOI18N
+        jLabelCalculator.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCalculatorMouseClicked(evt);
+            }
+        });
+        jpIngreso.add(jLabelCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 100, -1, -1));
+
+        jLabelMusic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/musica.png"))); // NOI18N
+        jLabelMusic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelMusicMouseClicked(evt);
+            }
+        });
+        jpIngreso.add(jLabelMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 140, -1, -1));
+
+        jLabelUserPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelUserPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuario.png"))); // NOI18N
+        jpIngreso.add(jLabelUserPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 170, 80));
+
+        jLUser.setBackground(new java.awt.Color(0, 0, 0));
         jLUser.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jLUser.setForeground(new java.awt.Color(238, 112, 82));
         jLUser.setText("User:");
-        jpIngreso.add(jLUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 70, 50));
+        jpIngreso.add(jLUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 70, 50));
 
-        jLPass.setBackground(new java.awt.Color(238, 112, 82));
-        jLPass.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jLPass.setForeground(new java.awt.Color(238, 112, 82));
-        jLPass.setText("Password:");
-        jpIngreso.add(jLPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 40));
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_User_96px_2.png"))); // NOI18N
-        jpIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 150, 80));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuarios.png"))); // NOI18N
+        jpIngreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 40, 40));
 
         jTextField1.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jTextField1.setText("Ingrese usuario");
         jTextField1.setBorder(null);
-        jpIngreso.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 210, 30));
+        jpIngreso.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 220, 40));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jpIngreso.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 270, 30));
+
+        jLPass.setBackground(new java.awt.Color(0, 0, 0));
+        jLPass.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLPass.setText("Password:");
+        jpIngreso.add(jLPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 110, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar-con-llave.png"))); // NOI18N
+        jpIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 30, 40));
 
         jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setBorder(null);
-        jpIngreso.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 200, 40));
+        jpIngreso.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 180, 40));
 
-        jSeparator2.setBackground(new java.awt.Color(60, 63, 65));
-        jSeparator2.setForeground(new java.awt.Color(45, 45, 45));
-        jpIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 10));
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jpIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 270, 20));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_customer_32px_1.png"))); // NOI18N
-        jpIngreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 40, 40));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ojo.png"))); // NOI18N
+        jpIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 30, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Key_32px.png"))); // NOI18N
-        jpIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 40, 40));
+        jButtonEnter.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/jugar.png"))); // NOI18N
+        jButtonEnter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 2));
+        jButtonEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnterActionPerformed(evt);
+            }
+        });
+        jpIngreso.add(jButtonEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 150, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Menu_32px.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpIngreso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
+        getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 580));
 
-        jSeparator3.setBackground(new java.awt.Color(60, 63, 65));
-        jpIngreso.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 230, 10));
+        jpAcciones.setBackground(new java.awt.Color(255, 255, 255));
+        jpAcciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jpAcciones.setForeground(new java.awt.Color(255, 255, 255));
+        jpAcciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
+        jLabelProgramador1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelProgramador1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelProgramador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelProgramador1.setText("PROGRAMADO");
+        jpAcciones.add(jLabelProgramador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 160, 30));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelCronograma.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelCronograma.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelCronograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelCronograma.setText("ACCESORIA");
+        jpAcciones.add(jLabelCronograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 170, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
-        );
+        jLabelMantenimiento.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelMantenimiento.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelMantenimiento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMantenimiento.setText("COMUNICACION");
+        jpAcciones.add(jLabelMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 170, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 760, 530));
+        jLabelNotas.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelNotas.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelNotas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNotas.setText("BUZON DE SUGERENCIAS ");
+        jpAcciones.add(jLabelNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 240, 30));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelDrive.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelDrive.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelDrive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDrive.setText("DESCUENTOS");
+        jpAcciones.add(jLabelDrive, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 140, 30));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
-        );
+        jLabelSocios.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelSocios.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelSocios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSocios.setText("REDES SOCIALES");
+        jpAcciones.add(jLabelSocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 170, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
+        jLabelBarra.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelBarra.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabelBarra.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelBarra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelBarra.setText("Buscar....");
+        jLabelBarra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jpAcciones.add(jLabelBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 430, 40));
+
+        jlabelProgramado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelProgramado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/directorio (1).png"))); // NOI18N
+        jlabelProgramado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelProgramado.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelProgramadoMouseMoved(evt);
+            }
+        });
+        jlabelProgramado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelProgramadoMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelProgramado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 120, 120));
+
+        jlabelMenu.setBackground(new java.awt.Color(255, 0, 255));
+        jlabelMenu.setForeground(new java.awt.Color(255, 0, 255));
+        jlabelMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/llamada-entrante (1).png"))); // NOI18N
+        jlabelMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelMenu.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelMenuMouseMoved(evt);
+            }
+        });
+        jlabelMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelMenuMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 140, 120));
+
+        jlabelMantenimiento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/comentario.png"))); // NOI18N
+        jlabelMantenimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelMantenimiento.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelMantenimientoMouseMoved(evt);
+            }
+        });
+        jlabelMantenimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelMantenimientoMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 110, 100));
+
+        jlabelFoco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelFoco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bulbo (1).png"))); // NOI18N
+        jlabelFoco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelFoco.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelFocoMouseMoved(evt);
+            }
+        });
+        jlabelFoco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelFocoMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelFoco, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 100, 100));
+
+        jlabelDrive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelDrive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/calendario.png"))); // NOI18N
+        jlabelDrive.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelDrive.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelDriveMouseMoved(evt);
+            }
+        });
+        jlabelDrive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelDriveMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelDrive, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 110, 110));
+
+        jlabelSocio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelSocio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar.png"))); // NOI18N
+        jlabelSocio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelSocio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlabelSocioMouseMoved(evt);
+            }
+        });
+        jlabelSocio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlabelSocioMouseExited(evt);
+            }
+        });
+        jpAcciones.add(jlabelSocio, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 120, 110));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/busqueda.png"))); // NOI18N
+        jpAcciones.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 40, 40));
+
+        getContentPane().add(jpAcciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 750, 530));
+
+        jpE_S.setBackground(new java.awt.Color(255, 255, 255));
+        jpE_S.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jpE_S.setForeground(new java.awt.Color(255, 255, 255));
+        jpE_S.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/angulo-pequeno-hacia-abajo.png"))); // NOI18N
+        jLabelMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelMinimizarMouseClicked(evt);
+            }
+        });
+        jpE_S.add(jLabelMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 30, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir-alt.png"))); // NOI18N
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jpE_S.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 40, 50));
+
+        getContentPane().add(jpE_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
+        //Izquierda derecha 
+        AnimationClass internetiz = new AnimationClass();
+        internetiz.jLabelXRight(-40, 10, 10, 5, jLabelInternet);
+        AnimationClass calculatoriz = new AnimationClass();
+        internetiz.jLabelXRight(-40, 10, 10, 5, jLabelCalculator);
+        AnimationClass musiciz = new AnimationClass();
+        internetiz.jLabelXRight(-40, 10, 10, 5, jLabelMusic);
+        //Derecha izquierda
+        AnimationClass internetder = new AnimationClass();
+        internetder.jLabelXLeft(10, -40, 10, 5, jLabelInternet);
+        AnimationClass calculatorder = new AnimationClass();
+        calculatorder.jLabelXLeft(10, -40, 10, 5, jLabelCalculator);
+        AnimationClass musicder = new AnimationClass();
+        musicder.jLabelXLeft(10, -40, 10, 5, jLabelMusic);
+    }//GEN-LAST:event_jLabelMenuMouseClicked
+
+    private void jLabelMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinimizarMouseClicked
+        this.setState(Login.ICONIFIED);
+    }//GEN-LAST:event_jLabelMinimizarMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        int dialog = JOptionPane.YES_NO_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea salir de Login?", "Exit", dialog);
+        if (result == 0) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jlabelProgramadoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelProgramadoMouseMoved
+        //Muestra los border en Label de color gris
+        jlabelProgramado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelProgramadoMouseMoved
+
+    private void jlabelProgramadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelProgramadoMouseExited
+        //Muestra los border en Label de color gris
+        jlabelProgramado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelProgramadoMouseExited
+
+    private void jlabelMenuMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelMenuMouseMoved
+        jlabelMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelMenuMouseMoved
+
+    private void jlabelMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelMenuMouseExited
+        jlabelMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelMenuMouseExited
+
+    private void jlabelMantenimientoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelMantenimientoMouseMoved
+        jlabelMantenimiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelMantenimientoMouseMoved
+
+    private void jlabelMantenimientoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelMantenimientoMouseExited
+        jlabelMantenimiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelMantenimientoMouseExited
+
+    private void jlabelDriveMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelDriveMouseMoved
+        jlabelDrive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelDriveMouseMoved
+
+    private void jlabelDriveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelDriveMouseExited
+        jlabelDrive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelDriveMouseExited
+
+    private void jlabelSocioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSocioMouseMoved
+        jlabelSocio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelSocioMouseMoved
+
+    private void jlabelSocioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelSocioMouseExited
+        jlabelSocio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelSocioMouseExited
+
+    private void jLabelInternetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInternetMouseClicked
+        OpenInternet();
+    }//GEN-LAST:event_jLabelInternetMouseClicked
+
+    private void jLabelCalculatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCalculatorMouseClicked
+        try {
+            Runtime rt = Runtime.getRuntime();
+            Process pro = rt.exec("Calc");
+            pro.waitFor();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jLabelCalculatorMouseClicked
+   
+    private void jLabelMusicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicMouseClicked
+        OpenMusic();
+    }//GEN-LAST:event_jLabelMusicMouseClicked
+
+    private void jlabelFocoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelFocoMouseExited
+        jlabelFoco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+    }//GEN-LAST:event_jlabelFocoMouseExited
+
+    private void jlabelFocoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabelFocoMouseMoved
+        jlabelFoco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlabelFocoMouseMoved
+
+    private void jButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,18 +480,39 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonEnter;
     private javax.swing.JLabel jLPass;
     private javax.swing.JLabel jLUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelBarra;
+    private javax.swing.JLabel jLabelCalculator;
+    private javax.swing.JLabel jLabelCronograma;
+    private javax.swing.JLabel jLabelDrive;
+    private javax.swing.JLabel jLabelInternet;
+    private javax.swing.JLabel jLabelMantenimiento;
+    private javax.swing.JLabel jLabelMenu;
+    private javax.swing.JLabel jLabelMinimizar;
+    private javax.swing.JLabel jLabelMusic;
+    private javax.swing.JLabel jLabelNotas;
+    private javax.swing.JLabel jLabelProgramador1;
+    private javax.swing.JLabel jLabelSocios;
+    private javax.swing.JLabel jLabelUserPerfil;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jlabelDrive;
+    private javax.swing.JLabel jlabelFoco;
+    private javax.swing.JLabel jlabelMantenimiento;
+    private javax.swing.JLabel jlabelMenu;
+    private javax.swing.JLabel jlabelProgramado;
+    private javax.swing.JLabel jlabelSocio;
+    private javax.swing.JPanel jpAcciones;
+    private javax.swing.JPanel jpE_S;
     private javax.swing.JPanel jpIngreso;
     // End of variables declaration//GEN-END:variables
 }
